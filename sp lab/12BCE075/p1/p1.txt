@@ -1,0 +1,98 @@
+Practical #0: Different stages of execution of a program
+
+Different stages of execution:-
+1. Pre-processing
+2. Compilation
+3. Assembly
+4. Linking
+
+1. Pre-processing:- This stage does the following tasks-- Macro substitution,Comments are stripped off,Expansion of the included files.It will
+			output a file of type .i extension.
+2. Compiling:- This stage takes pre-processed .i file and compiles it to assembly language code . It outputs .s file.
+3. Assembly:- This stage converts the assembly language into machine-readable instructions or code. It outputs .o file.
+4. Linking:- This stage links all the function prototypes with the external files with their function implementations. 
+			
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Practical #1: Optimization levels
+
+Various optimization levels:-
+
+-O0: 
+time analysis--
+real	0m2.289s
+user	0m2.284s
+sys	0m0.000s
+
+size analysis--
+-rwxrwxr-x 1 a104 a104   7740 Jan 12 10:15 a1
+
+This level applies no optimization technique and compiles the source code as it is.
+
+
+
+-O1: 
+time analysis--
+real	0m1.394s
+user	0m1.392s
+sys	0m0.000s
+
+size analysis--
+-rwxrwxr-x 1 a104 a104   7643 Jan 12 10:14 a1
+
+This level takes much less execution time. It employs no speed-space tradeoff techniques. This level applies basic optimization techniques but leaves higher optimization techniques like instruction scheduling, but does not increase the executable code size( most probably decrease it). 
+
+
+
+-O2:
+time analysis--
+real	0m1.099s
+user	0m1.092s
+sys	0m0.004s
+
+size analysis--
+-rwxrwxr-x 1 a104 a104   7643 Jan 12 10:14 a1
+
+This level applies additional optimization techniques like instruction scheduling, in addition to -O1. It still does not apply speed-space tradeoffs. Hence executable code size remains same or may decrease , but would not increase anytime.
+
+
+
+-O3:
+time analysis--
+real	0m1.098s
+user	0m1.096s
+sys	0m0.000s
+
+size analysis--
+-rwxrwxr-x 1 a104 a104   7643 Jan 12 10:14 a1
+
+This level employs the speed-space tradeoff techniques. It also uses techniques like function inlining. Execution speed increases, but executable code size may also increases.
+
+
+
+-funroll-loops:
+time analysis--
+real	0m2.272s
+user	0m2.264s
+sys	0m0.008s
+
+size analysis--
+-rwxrwxr-x 1 a104 a104   7740 Jan 12 10:22 a1
+
+It enables loop unrolling. Execution time may or may not decrease , as per case basis. However , the code size would definitely increase.
+
+
+
+-Os
+time analysis--
+real	0m1.747s
+user	0m1.740s
+sys	0m0.004s
+
+size analysis--
+-rwxrwxr-x 1 a104 a104   7643 Jan 12 10:14 a1
+
+It enables only those optimization techniques that will increase execution speed , but will only decrease/maintain the size of executable code.
+

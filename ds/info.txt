@@ -1,0 +1,3 @@
+|prac1|sharing content with mkfifo|
+|prac2|using pipe function|
+|prac3|shared memory|
